@@ -69,10 +69,10 @@ export default {
                 }
             }
         },
+        goToAddContact() {
+            this.$router.push({ name: "contact.add" });
+        },
 
-    },
-    goToAddContact() {
-        this.$router.push({ name: "contact.add" });
     },
     mounted() {
         this.refreshList();
@@ -96,9 +96,11 @@ export default {
                 <button class="btn btn-sm btn-primary" @click="refreshList()">
                     <i class="fas fa-redo"></i> Làm mới
                 </button>
+                
                 <button class="btn btn-sm btn-success" @click="goToAddContact">
                     <i class="fas fa-plus"></i> Thêm mới
                 </button>
+
                 <button class="btn btn-sm btn-danger" @click="removeAllContacts">
                     <i class="fas fa-trash"></i> Xóa tất cả
                 </button>

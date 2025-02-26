@@ -1,5 +1,6 @@
 <template>
     <Form @submit="submitContact" :validation-schema="contactFormSchema">
+    
         <div class="form-group">
             <label for="name">Tên</label>
 
@@ -34,14 +35,26 @@
                 <strong>Liên hệ yêu thích</strong>
             </label>
         </div>
+      
+        
+
         <div class="form-group">
-            <button class="btn btn-primary">Lưu</button>
-            <button v-if="contactLocal._id" type="button" class="ml-2 btn btn-danger" @click="deleteContact">
-                Xóa
-            </button>
-            <button type="button" class="ml-2 btn btn-danger" @click="Cancel">
-                Thoát
-            </button>
+            <div v-if="contact">
+
+                <button class="btn btn-primary">Lưu</button>
+                <button v-if="contactLocal._id" type="button" class="ml-2 btn btn-danger" @click="deleteContact">
+                    Xóa
+                </button>
+                <button type="button" class="ml-2 btn btn-danger" @click="Cancel">
+                    Thoát
+                </button>
+            </div>
+            <div v-else>
+                <button class="btn btn-primary">Thêm</button>
+                <button type="button" class="ml-2 btn btn-danger" @click="Cancel">
+                    Thoát
+                </button>
+            </div>
         </div>
     </Form>
 </template>
